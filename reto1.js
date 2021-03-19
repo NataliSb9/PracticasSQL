@@ -14,13 +14,13 @@ connection.connect(function(err){
 })
 
 // 1.1 calculo de media:
-/*let average = "SELECT AVG(mark)FROM marks WHERE subject_id=1"
+let average = "SELECT AVG(mark)FROM marks WHERE subject_id=1"
 
 connection.query(average, function (err, resultado) {
     if (err) throw err;
     console.log("Has calculado la media correctamente"+ average);
 });
-*/
+
 //1.2 Calculo de alumnos en el bootcamp:
 
 let count = "SELECT COUNT(*)FROM students"
@@ -51,19 +51,19 @@ connection.query(removeMarks, function (err, resultado) {
 //1.5 Añadir un nuevo campo q sea anyo de ingreso y obten todos los estudiantes de 2021
 
 //Altero la tabla de students:
-let newField = "ALTER TABLE students ADD entryDate DATE"
+/*let newField = "ALTER TABLE students ADD entryDate DATE"
 connection.query(newField, function (err, resultado) {
     if (err) throw err;
     console.log("Actualizado correctamente");
-});
+});*/
 
 //Creo el filtro para mostrar lo que pide:
 
-let entryDate = `SELECT student_id FROM students WHERE entryDate BETWEEN ${2020-01-01} AND ${2020-12-31}`
+/*let entryDate = `SELECT student_id FROM students WHERE entryDate BETWEEN ${2020-01-01} AND ${2020-12-31}`
 connection.query(entryDate, function (err, resultado) {
     if (err) throw err;
     console.log("Actualizado correctamente");
-});
+});*/
 
 //1.6 
 let teacherByClass = `SELECT idTeacher, subject_id, COUNT(subject_id) FROM subject_teacher GROUP BY subject_id`
